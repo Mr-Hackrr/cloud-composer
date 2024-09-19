@@ -29,8 +29,8 @@ with DAG(
     gcs_to_bq_load = GCSToBigQueryOperator(
         task_id='gcs_to_bq_load',
         bucket='data_eng_demos0011', 
-        source_objects=['automobile.csv'], 
-        destination_project_dataset_table='customerp-1711290140039.automobie_dataset.automobile', 
+        source_objects=['sales.csv'], 
+        destination_project_dataset_table='customerp-1711290140039.sales_dataset.sales', 
 
         skip_leading_rows=0,  
         source_format='CSV',  # Format of the source data

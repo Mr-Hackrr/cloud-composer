@@ -1,0 +1,31 @@
+
+CLOUD COMPOSER: 
+
+Step 1: Enable Cloud Composer API.
+
+Step 2: Create a Composer Environment:
+- Give it a unique name.
+- Click "Create".
+
+Step 3: Prepare Your Data:
+- Open Google Cloud Storage (GCS) and create a bucket.
+- Upload your CSV file to the bucket.
+
+Step 4: Set Up BigQuery:
+- Open BigQuery and create a table with the required schema.
+
+Step 5: Update Your DAG:
+- Modify your Python DAG code to reference the GCS bucket and BigQuery table.
+
+Step 6: Deploy Your DAG:
+- In the Composer console, open the DAGS folder.
+- Upload your Python DAG file to the DAGS folder.
+
+Step 7: Run Your DAG:
+- Open the Airflow UI from the Composer console.
+- Wait for the DAG to appear in the UI (this may take a couple of minutes).
+- Open the gcs_to_bg_dag and trigger it.
+
+Step 8: Verify Data in BigQuery:
+- Run a query in BigQuery to check if the data has been written correctly.
+

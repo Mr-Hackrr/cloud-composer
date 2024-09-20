@@ -1,0 +1,142 @@
+A Cloud SDK (Software Development Kit) is a collection of tools that developers use to 
+manage and interact with cloud services. One popular example is the Google Cloud SDK, which includes:
+
+Google Cloud CLI: Command-line tools to manage Google Cloud resources.
+Cloud Client Libraries: High-level API abstractions for various programming languages.
+Developer Tools: Extensions like Cloud Code for writing, debugging, and deploying cloud-native apps.
+Documentation: Technical references and code snippets to help developers use the SDK effectively12.
+These tools make it easier to develop, deploy, and manage applications on cloud platforms.
+
+The Google Cloud SDK includes several command-line tools that help you manage and interact with Google 
+Cloud resources. Here are the primary ones:
+
+gcloud: The main command-line tool for interacting with Google Cloud services. You can use it to manage resources like Compute Engine, Cloud Storage, and BigQuery. It supports a wide range of operations, including creating, configuring, and deleting resources.
+gsutil: A command-line tool for working with Google Cloud Storage. It allows you to perform tasks such as uploading, downloading, and managing storage buckets and objects.
+bq: The command-line tool for interacting with BigQuery. You can use it to run queries, manage datasets and tables, and perform other BigQuery operations.
+kubectl: While not exclusive to Google Cloud, this tool is included in the SDK for managing Kubernetes clusters. It allows you to deploy applications, inspect and manage cluster resources, and view logs.
+These tools are designed to streamline your workflow and make it easier to manage your cloud infrastructure directly from the command line.
+
+command line tools examples:
+
+
+gcloud- Initialize the SDK:
+
+gcloud init
+
+- Set the default project:
+
+gcloud config set project my-project-id
+
+- List all active configurations:
+
+gcloud config configurations list
+
+- Create a new Compute Engine instance:
+
+gcloud compute instances create my-instance --zone=us-central1-a
+
+- Deploy an App Engine application:
+
+gcloud app deploy
+
+- List all Compute Engine instances:
+
+gcloud compute instances list
+
+- SSH into a Compute Engine instance:
+
+gcloud compute ssh my-instance --zone=us-central1-a
+
+- Deploy a Cloud Function:
+
+gcloud functions deploy my-function --runtime nodejs14 --trigger-http
+
+- Get credentials for a Kubernetes cluster:
+
+gcloud container clusters get-credentials my-cluster --zone=us-central1-a
+
+- List all available services:
+
+gcloud services list
+
+gsutil- List all buckets:
+
+gsutil ls
+
+- Create a new bucket:
+
+gsutil mb gs://my-bucket
+
+- Upload a file to a bucket:
+
+gsutil cp my-file.txt gs://my-bucket
+
+- Download a file from a bucket:
+
+gsutil cp gs://my-bucket/my-file.txt .
+
+- Remove a file from a bucket:
+
+gsutil rm gs://my-bucket/my-file.txt
+
+- List all files in a bucket:
+
+gsutil ls gs://my-bucket
+
+- Copy files between buckets:
+
+gsutil cp gs://source-bucket/my-file.txt gs://destination-bucket/
+
+- Synchronize a local directory with a bucket:
+
+gsutil rsync -r ./local-dir gs://my-bucket
+
+- Set bucket permissions:
+
+gsutil acl set private gs://my-bucket
+
+- Get bucket information:
+
+gsutil ls -L gs://my-bucket
+
+bq- List all datasets:
+
+bq ls
+
+- Create a new dataset:
+
+bq mk my_dataset
+
+- List all tables in a dataset:
+
+bq ls my_dataset
+
+- Create a new table:
+
+bq mk --table my_dataset.my_table schema.json
+
+- Query data:
+
+bq query 'SELECT * FROM my_dataset.my_table LIMIT 10'
+
+- Load data into a table:
+
+bq load --source_format=CSV my_dataset.my_table gs://my-bucket/my-data.csv schema.json
+
+- Export table data to Cloud Storage:
+
+bq extract my_dataset.my_table gs://my-bucket/my-data.csv
+
+- Delete a table:
+
+bq rm -f my_dataset.my_table
+
+- Show table schema:
+
+bq show --schema my_dataset.my_table
+
+- Update table schema:
+
+bq update my_dataset.my_table new_schema.json
+
+

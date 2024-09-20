@@ -2,7 +2,12 @@ from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 from datetime import datetime, timedelta
 import pandas as pd
- 
+
+"""
+In this you have to take input file from gcs bucket(write one task for it) and at last write output to bigquery(first try to write into 
+bucket and then try bigquery). here are some cleaning and transforing steps change tasks names based on that. write two tasks that takes input file
+write output file
+"""
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
